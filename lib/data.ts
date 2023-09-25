@@ -37,20 +37,12 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Bachelor Of Vocational Studies in Software development",
-    location: "Amarkantank, M.P.",
+    title: "Front-End Developer",
+    location: "Pune, M.H.",
     description:
-      "I graduated after Pursuing 3 years of Bachelor's Degree.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019 - 2022",
-  },
-  {
-    title: "Hacktoberfest Contest",
-    location: "Remote",
-    description:
-      "Participated in Hacktoberfest contest and played an active role in open-source projects. Contributed 4 successful Pull Requests on GitHub.",
-    icon: React.createElement(IoMdTrophy),
-    date: "2021",
+      "I worked as a front-end developer and Delivered Responsive UI projects that enriched user experience.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Feb'23 - June'23",
   },
   {
     title: "MLH Hackathon",
@@ -61,13 +53,22 @@ export const experiencesData = [
     date: "2022",
   },
   {
-    title: "Front-End Developer",
-    location: "Pune, M.H.",
+    title: "Hacktoberfest Contest",
+    location: "Remote",
     description:
-      "I worked as a front-end developer and Delivered Responsive UI projects that enriched user experience.",
-    icon: React.createElement(CgWorkAlt),
-    date: "Feb'23 - June'23",
+      "Participated in Hacktoberfest contest and played an active role in open-source projects. Contributed 4 successful Pull Requests on GitHub.",
+    icon: React.createElement(IoMdTrophy),
+    date: "2021",
   },
+  {
+    title: "Bachelor Of Vocational Studies in Software development",
+    location: "Amarkantank, M.P.",
+    description:
+      "I graduated after Pursuing 3 years of Bachelor's Degree.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2019 - 2022",
+  },
+  
 ] as const;
 
 export const projectsData = [
@@ -89,7 +90,7 @@ export const projectsData = [
     title: "Taxi Booking App",
     description:
       "Developed Functional Taxi Booking App that  utilizes front-end technologies. Users can easily sign in, sign out, and pay with their card.",
-    tags: ["Next.js", "React", "Tailwind", "Typescript", "Mapbox"],
+    tags: ["Next.js", "React", "Tailwind", "Typescript", "Mapbox", "Clerk", "Stripe"],
     imageUrl: taxiBookingImg,
   },
   {
@@ -107,6 +108,7 @@ export const skillsData = [
   "JavaScript",
   "TypeScript",
   "React",
+  "Angular",
   "Next.js",
   "Bootstrap",
   "Tailwind",
@@ -115,14 +117,15 @@ export const skillsData = [
   "Express",
   "Framer Motion",
   "D3.js",
-  "Angular",
   "Node.js",
+  "Bit bucket",
   "Git",
   "MySQL",
   "Java",
   "Mapbox",
   "NPM",
   "Firebase",
-  "Vercel"
+  "Vercel",
+  "Netlify"
   	
 ] as const;
