@@ -40,7 +40,7 @@ export const experiencesData = [
     title: "Front-End Developer",
     location: "Remote",
     description:
-      "I worked as a front-end developer and Delivered Responsive UI projects that enriched user experience.",
+      " Implemented new components to increase in website functionality and user engagement, Revamped 20 existing design elements",
     icon: React.createElement(CgWorkAlt),
     date: "Gastos Private Limited | Oct'23 - Nov'23",
   },
