@@ -38,11 +38,19 @@ export const links = [
 export const experiencesData = [
   {
     title: "Front-End Developer",
+    location: "Remote",
+    description:
+      "I worked as a front-end developer and Delivered Responsive UI projects that enriched user experience.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Gastos Private Limited | Oct'23 - Nov'23",
+  },
+  {
+    title: "Front-End Developer",
     location: "Pune, M.H.",
     description:
       "I worked as a front-end developer and Delivered Responsive UI projects that enriched user experience.",
     icon: React.createElement(CgWorkAlt),
-    date: "Feb'23 - June'23",
+    date: "Inferyx | Feb'23 - June'23",
   },
   {
     title: "MLH Hackathon",
