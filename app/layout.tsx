@@ -11,9 +11,9 @@ import TopBottom from "@/components/topBottom";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Aditya Chaturvedi",
+  title: "Aditya Chaturvedi · Fintech Product & Operations",
   description:
-    "A proactive developer with a strong track record of meeting project deadlines. Ability to solve issues and provide innovative software solutions.",
+    "Fintech professional working across payments, merchant experience, product problem-solving, and technical operations.",
 };
 
 export default function RootLayout({
@@ -31,7 +31,6 @@ export default function RootLayout({
             <Header />
             {children}
             <Footer />
-
             <Toaster position="top-right" />
             <ThemeSwitch />
             <TopBottom />
