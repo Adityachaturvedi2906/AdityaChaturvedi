@@ -5,7 +5,7 @@ import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Skills() {
-  const { ref } = useSectionInView("Skills");
+  const { ref } = useSectionInView("Work");
   return (
     <section id="skills" ref={ref} className="mx-auto mb-28 w-full max-w-5xl scroll-mt-28 sm:mb-40">
       <SectionHeading>Capabilities</SectionHeading>
