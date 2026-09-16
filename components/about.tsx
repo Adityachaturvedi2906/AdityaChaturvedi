@@ -1,39 +1,23 @@
 "use client";
 
-import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
   const { ref } = useSectionInView("About");
-
   return (
-    <motion.section
-      ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-32"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-      id="about"
-    >
-      <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Software Development</span>, I decided to participate in{" "}
-        <span className="font-medium">Hacktoberfest Contest</span>.{" "}Where I Submitted more than four pull requests and was <span className="font-medium">recognized as one of the 50,000 participants worldwide.</span>{" "}<span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
-        </span>
-        . I am also familiar with TypeScript and Tailwind. I am always looking to learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a Front-end Developer
-        developer.{" "}
-       I enjoy clicking pictures, watching movies, and Writing{" "}<span className="italic">When I'm not coding</span>. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>.
-      </p>
+    <motion.section ref={ref} id="about" className="mx-auto mb-28 max-w-5xl scroll-mt-28 sm:mb-40" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+      <SectionHeading>About</SectionHeading>
+      <div className="grid gap-8 md:grid-cols-[1.1fr_.9fr]">
+        <p className="text-lg leading-8 text-gray-600 dark:text-white/70">
+          My background is in software development, but my recent work has moved closer to the product itself. I spend time understanding merchant use cases, tracing payment and integration issues, working with data, and explaining technical decisions to non-technical stakeholders.
+        </p>
+        <div className="rounded-2xl border border-black/10 p-6 dark:border-white/10">
+          <p className="text-sm font-semibold">What I bring</p>
+          <p className="mt-3 leading-7 text-gray-600 dark:text-white/70">Technical context without losing sight of the user, process, and business problem.</p>
+        </div>
+      </div>
     </motion.section>
   );
 }

@@ -3,20 +3,20 @@ import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
-import SectionDividerHome from '@/components/section-divider-Home'
+import Arcade from "@/components/arcade";
+import ProductNotes from "@/components/product-notes";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
       <Intro />
-      <SectionDividerHome />
-      <About />
-      <Projects />
-      <SectionDivider />
-      <Skills />
+      <Arcade />
+      <ProductNotes />
       <Experience />
+      <Skills />
+      <Projects />
+      <About />
       <Contact />
     </main>
   )
