@@ -3,13 +3,29 @@
 @tailwind utilities;
 
 html {
-	--line-color: #e5e7eb;
+  --line-color: #e7e8ee;
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #dcd4ff;
+  color: #17152a;
+}
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
-  
-  html.dark {
-	--line-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .borderBlack {
-	@apply border border-black/10;
-  } 
+}
