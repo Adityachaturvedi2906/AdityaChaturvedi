@@ -3,18 +3,11 @@ import { FaHeart } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="mb-10 px-4 text-center text-gray-500">
-      <small className="mb-2 block text-xs">
-        &copy; Made with{" "}
-        <FaHeart style={{ display: "inline-block", verticalAlign: "middle" }} />{" "}
-        by Aditya Chaturvedi
-      </small>
-
-      <p className="text-xs">
-        <span className="font-semibold">About this website:</span> built with
-        React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS,
-        Framer Motion, React Email & Resend, Vercel hosting.
-      </p>
+    <footer className="mx-auto mb-10 w-full max-w-6xl border-t border-black/[0.06] px-2 pt-6 text-gray-400 dark:border-white/10">
+      <div className="flex flex-col gap-2 text-center text-[11px] sm:flex-row sm:items-center sm:justify-between sm:text-left">
+        <small>© {new Date().getFullYear()} Aditya Chaturvedi · Built with <FaHeart className="mx-1 inline-block text-[9px]" /> Next.js</small>
+        <small>Fintech · Product · Operations</small>
+      </div>
     </footer>
   );
 }
