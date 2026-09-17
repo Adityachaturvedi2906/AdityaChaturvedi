@@ -23,9 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={`${inter.className} bg-gray-50 text-gray-950 relative pt-20 sm:pt-36 dark:bg-gray-950 dark:text-gray-50 dark:text-opacity-90`}>
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
+      <body className={`${inter.className} relative bg-[#fbfbfd] pt-20 text-[#101426] antialiased dark:bg-[#090a0f] dark:text-white`}>
+        <div className="pointer-events-none absolute left-[-12rem] top-[-10rem] -z-10 h-[34rem] w-[34rem] rounded-full bg-[#ddd8ff] blur-[9rem] opacity-70 dark:bg-[#4d447c] dark:opacity-20" />
+        <div className="pointer-events-none absolute right-[-12rem] top-[-4rem] -z-10 h-[32rem] w-[32rem] rounded-full bg-[#ffe3d8] blur-[9rem] opacity-70 dark:bg-[#6c3f34] dark:opacity-20" />
+        <div className="pointer-events-none absolute left-1/2 top-[30rem] -z-10 h-[24rem] w-[40rem] -translate-x-1/2 rounded-full bg-[#e7edff] blur-[10rem] opacity-60 dark:bg-[#27355d] dark:opacity-20" />
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
