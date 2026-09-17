@@ -13,9 +13,7 @@ export default function Intro() {
   const [resumeOpen, setResumeOpen] = useState(false);
 
   useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setResumeOpen(false);
-    };
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setResumeOpen(false); };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
@@ -30,7 +28,7 @@ export default function Intro() {
             <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.16 }} className="mt-6 max-w-2xl text-base leading-7 text-gray-600 dark:text-white/70 sm:text-lg">I work across payment integrations, merchant problems, product friction, and operations — with a technical background and a product-first way of thinking.</motion.p>
             <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.24 }} className="mt-7 flex flex-wrap items-center gap-3">
               <Link href="#product-notes" className="flex items-center gap-2 rounded-full bg-gray-950 px-6 py-3 font-medium text-white transition hover:-translate-y-0.5 dark:bg-white dark:text-gray-950">See product thinking <BsArrowDown className="opacity-60" /></Link>
-              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/aditya-chaturvedri-1751641aa/" target="_blank" rel="noreferrer" className="rounded-full border border-black/10 bg-white/60 p-3.5 text-gray-800 transition hover:bg-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"><BsLinkedin /></a>
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/in/aditya-chaturvedi2906/" target="_blank" rel="noreferrer" className="rounded-full border border-black/10 bg-white/60 p-3.5 text-gray-800 transition hover:bg-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"><BsLinkedin /></a>
               <a aria-label="GitHub" href="https://github.com/Adityachaturvedi2906" target="_blank" rel="noreferrer" className="rounded-full border border-black/10 bg-white/60 p-3.5 text-xl text-gray-800 transition hover:bg-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"><FaGithubSquare /></a>
             </motion.div>
           </div>
