@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BsArrowRight, BsLightbulb, BsShieldCheck, BsPerson, BsCreditCard, BsGift, BsGraphUpArrow } from "react-icons/bs";
@@ -57,12 +56,20 @@ export default function ProductNotes() {
           </div>
 
           <div className="order-1 flex items-center justify-center rounded-[1.7rem] border border-[var(--border)] bg-[var(--surface-soft)] p-3 sm:p-5 lg:order-2">
-            <div className="w-full max-w-[300px] overflow-hidden rounded-[1.6rem] border border-[var(--border)] bg-black shadow-[0_25px_45px_rgba(20,20,30,0.25)]">
-              <Image src="/pop-verification.jpg" alt="POP verification screen showing that more details are needed to verify identity and that the team will call within 24–48 hours" width={768} height={1536} className="h-auto w-full object-contain" priority />
+            <div className="relative h-[400px] w-full max-w-[300px] overflow-hidden rounded-[1.6rem] border border-[var(--border)] bg-[#08090b] shadow-[0_25px_45px_rgba(20,20,30,0.25)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_16%,rgba(113,66,42,.42),transparent_30%),linear-gradient(#17100d,#08090b_54%)]" />
+              <div className="absolute left-1/2 top-12 -translate-x-1/2 text-4xl font-black tracking-[-0.12em] text-white/80">pop</div>
+              <div className="absolute bottom-0 left-0 right-0 rounded-t-[1.4rem] border border-white/10 bg-[#171717]/95 p-4 text-center backdrop-blur-md">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[#6638e8] text-xl text-white">✦</div>
+                <h3 className="mt-4 text-[15px] font-bold leading-5 text-white">We need more details<br />to verify your identity</h3>
+                <p className="mt-3 text-[9px] leading-4 text-white/65">Our team will call within 24–48 hours.<br />You can also reach us at support@popclub.co</p>
+                <div className="mt-3 rounded-xl border border-white/10 bg-white/[0.05] px-3 py-2 text-left"><span className="block text-[8px] text-white/45">Email address</span><span className="text-[10px] font-medium text-white">support@popclub.co</span></div>
+                <div className="mt-3 rounded-full bg-white py-2 text-[11px] font-semibold text-black">Close app</div>
+              </div>
             </div>
           </div>
 
-          <div className="order-3 grid gap-4 sm:grid-cols-2">
+          <div className="order-3 grid gap-4 sm:grid-cols-2 gap-4 sm:grid-cols-2">
             <div className="surface-soft rounded-2xl border p-5"><div className="flex items-center gap-2"><span className="accent flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--accent-soft)]"><BsLightbulb /></span><h3 className="font-semibold">What actually happened</h3></div><p className="muted mt-4 text-sm leading-6">I signed up, reached identity verification, and then got the message shown here. The only next steps presented to me were waiting for a call within 24–48 hours or contacting support.</p></div>
             <div className="surface-soft rounded-2xl border p-5"><div className="flex items-center gap-2"><span className="accent flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--accent-soft)]"><BsShieldCheck /></span><h3 className="font-semibold">The product question</h3></div><p className="muted mt-4 text-sm leading-6">There was no visible alternative verification route or way to continue into the product from this state. I would investigate whether the journey can provide another path or a clearer pending-verification experience.</p></div>
             <div className="surface-soft rounded-2xl border p-5 sm:col-span-2"><div className="flex items-center gap-2"><span className="accent flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--accent-soft)]"><BsGraphUpArrow /></span><h3 className="font-semibold">Why this matters</h3></div><p className="muted mt-4 text-sm leading-6">A user has already shown intent by completing signup. If the next meaningful product action is delayed, there is a gap between intent and value. The useful question is not simply &quot;is KYC slow?&quot; — it is &quot;what can the product do with a user while verification is pending?&quot;</p></div>
