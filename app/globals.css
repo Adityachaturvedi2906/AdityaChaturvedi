@@ -3,16 +3,37 @@
 @tailwind utilities;
 
 html {
+  --page-bg: #f6f7fb;
+  --page-text: #101426;
+  --muted-text: #657087;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-solid: #ffffff;
+  --surface-soft: #f1f2f7;
+  --border: rgba(16, 20, 38, 0.08);
+  --accent: #6a58d9;
+  --accent-soft: #eeeaff;
   --line-color: #e7e8ee;
   scroll-behavior: smooth;
 }
 
 html.dark {
+  --page-bg: #090b12;
+  --page-text: #f5f7ff;
+  --muted-text: rgba(235, 239, 255, 0.62);
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-solid: #11141d;
+  --surface-soft: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.11);
+  --accent: #b9b1ff;
+  --accent-soft: rgba(106, 88, 217, 0.16);
   --line-color: rgba(255, 255, 255, 0.12);
 }
 
 body {
   overflow-x: hidden;
+  background: var(--page-bg);
+  color: var(--page-text);
+  transition: background-color 220ms ease, color 220ms ease;
 }
 
 ::selection {
@@ -21,11 +42,34 @@ body {
 }
 
 .borderBlack {
-  @apply border border-black/10;
+  border: 1px solid var(--border);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .surface {
+    background: var(--surface);
+    border-color: var(--border);
+  }
+
+  .surface-solid {
+    background: var(--surface-solid);
+    border-color: var(--border);
+  }
+
+  .surface-soft {
+    background: var(--surface-soft);
+    border-color: var(--border);
+  }
+
+  .muted {
+    color: var(--muted-text);
+  }
+
+  .accent {
+    color: var(--accent);
   }
 }
