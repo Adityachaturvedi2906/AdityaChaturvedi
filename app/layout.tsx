@@ -12,21 +12,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Aditya Chaturvedi · Fintech Product & Operations",
-  description:
-    "Fintech professional working across payments, merchant experience, product problem-solving, and technical operations.",
+  description: "Fintech professional working across payments, merchant experience, product problem-solving, and technical operations.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={`${inter.className} relative bg-[#fbfbfd] pt-20 text-[#101426] antialiased dark:bg-[#090a0f] dark:text-white`}>
-        <div className="pointer-events-none absolute left-[-12rem] top-[-10rem] -z-10 h-[34rem] w-[34rem] rounded-full bg-[#ddd8ff] blur-[9rem] opacity-70 dark:bg-[#4d447c] dark:opacity-20" />
-        <div className="pointer-events-none absolute right-[-12rem] top-[-4rem] -z-10 h-[32rem] w-[32rem] rounded-full bg-[#ffe3d8] blur-[9rem] opacity-70 dark:bg-[#6c3f34] dark:opacity-20" />
-        <div className="pointer-events-none absolute left-1/2 top-[30rem] -z-10 h-[24rem] w-[40rem] -translate-x-1/2 rounded-full bg-[#e7edff] blur-[10rem] opacity-60 dark:bg-[#27355d] dark:opacity-20" />
+      <body className={inter.className + " min-h-screen overflow-x-hidden bg-[var(--page-bg)] text-[var(--page-text)] relative pt-20 sm:pt-28"}>
+        <div className="pointer-events-none absolute right-[-10rem] top-[-8rem] -z-10 h-[28rem] w-[28rem] rounded-full bg-[#f0d8dd] blur-[9rem] dark:bg-[#33243a] sm:right-[-6rem] sm:h-[40rem] sm:w-[40rem]" />
+        <div className="pointer-events-none absolute left-[-12rem] top-[5rem] -z-10 h-[25rem] w-[25rem] rounded-full bg-[#ddd9fb] blur-[9rem] dark:bg-[#252442] sm:left-[-8rem] sm:h-[35rem] sm:w-[35rem]" />
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
