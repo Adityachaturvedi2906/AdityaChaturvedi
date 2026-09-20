@@ -38,7 +38,7 @@ export default function ProductNotes() {
           >
             <div className="relative h-full max-h-[680px] w-full max-w-[350px] overflow-hidden rounded-[1.3rem] border border-[var(--border)] bg-black shadow-2xl">
               <img
-                src="/pop-verification.jpg"
+                src="/pop-verification.svg"
                 alt="POP verification screen encountered during onboarding"
                 className="h-full w-full object-contain"
               />
@@ -119,7 +119,7 @@ export default function ProductNotes() {
             <BsX className="text-2xl" />
           </button>
           <img
-            src="/pop-verification.jpg"
+            src="/pop-verification.svg"
             alt="POP verification screen encountered during onboarding"
             className="max-h-[92vh] max-w-full rounded-2xl object-contain shadow-2xl"
             onClick={(event) => event.stopPropagation()}
