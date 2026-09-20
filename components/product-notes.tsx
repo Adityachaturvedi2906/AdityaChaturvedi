@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { BsArrowRight, BsCheck2, BsGraphUpArrow } from "react-icons/bs";
+import { BsArrowRight, BsCheck2, BsGraphUpArrow, BsArrowsFullscreen, BsX } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 
 const recoveryIdeas = [
@@ -14,6 +15,7 @@ const funnel = ["Download", "OTP", "Verification", "First value"];
 
 export default function ProductNotes() {
   const { ref } = useSectionInView("Product Teardown", 0.25);
+  const [showImage, setShowImage] = useState(false);
 
   return (
     <motion.section ref={ref} id="product-notes" className="mx-auto mb-20 w-full max-w-6xl scroll-mt-28 sm:mb-32" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.08 }} transition={{ duration: 0.5 }}>
@@ -27,12 +29,25 @@ export default function ProductNotes() {
           <span className="surface-solid w-fit rounded-full border px-3 py-1.5 text-[11px] font-semibold muted">Observed firsthand</span>
         </div>
 
-        <div className="mt-6 grid gap-5 lg:grid-cols-[260px_1fr]">
-          <div className="flex items-center justify-center rounded-[1.5rem] border bg-[var(--surface-soft)] p-3 sm:p-4">
-            <div className="w-full max-w-[235px] overflow-hidden rounded-[1.3rem] border border-[var(--border)] bg-black shadow-xl">
-              <img src="/pop-verification.jpg" alt="POP verification screen encountered during onboarding" className="h-auto w-full object-contain" />
+        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(320px,390px)_1fr]">
+          <button
+            type="button"
+            onClick={() => setShowImage(true)}
+            className="group relative flex min-h-[520px] items-center justify-center overflow-hidden rounded-[1.5rem] border bg-[var(--surface-soft)] p-4 text-left shadow-sm transition hover:shadow-lg sm:min-h-[620px] sm:p-5"
+            aria-label="Open the POP verification screenshot at full size"
+          >
+            <div className="relative h-full max-h-[680px] w-full max-w-[350px] overflow-hidden rounded-[1.3rem] border border-[var(--border)] bg-black shadow-2xl">
+              <img
+                src="/pop-verification.jpg"
+                alt="POP verification screen encountered during onboarding"
+                className="h-full w-full object-contain"
+              />
+              <span className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/75 px-3 py-2 text-[11px] font-semibold text-white opacity-90 backdrop-blur transition group-hover:bg-black/90">
+                <BsArrowsFullscreen />
+                View full size
+              </span>
             </div>
-          </div>
+          </button>
 
           <div className="grid gap-3">
             <div className="surface-soft rounded-2xl border p-4 sm:p-5">
@@ -86,6 +101,31 @@ export default function ProductNotes() {
           </div>
         </div>
       </div>
+
+      {showImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm sm:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label="POP verification screenshot"
+          onClick={() => setShowImage(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setShowImage(false)}
+            className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+            aria-label="Close screenshot"
+          >
+            <BsX className="text-2xl" />
+          </button>
+          <img
+            src="/pop-verification.jpg"
+            alt="POP verification screen encountered during onboarding"
+            className="max-h-[92vh] max-w-full rounded-2xl object-contain shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
     </motion.section>
   );
 }
