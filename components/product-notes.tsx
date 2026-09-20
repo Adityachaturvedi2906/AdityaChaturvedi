@@ -30,7 +30,7 @@ export default function ProductNotes() {
         <div className="mt-6 grid gap-5 lg:grid-cols-[260px_1fr]">
           <div className="flex items-center justify-center rounded-[1.5rem] border bg-[var(--surface-soft)] p-3 sm:p-4">
             <div className="w-full max-w-[235px] overflow-hidden rounded-[1.3rem] border border-[var(--border)] bg-black shadow-xl">
-              <img src="/pop-verification.svg" alt="POP verification screen encountered during onboarding" className="h-auto w-full object-contain" />
+              <img src="/pop-verification.jpg" alt="POP verification screen encountered during onboarding" className="h-auto w-full object-contain" />
             </div>
           </div>
 
