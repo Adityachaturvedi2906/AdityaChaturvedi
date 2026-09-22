@@ -29,24 +29,19 @@ export default function ProductNotes() {
           <span className="surface-solid w-fit rounded-full border px-3 py-1.5 text-[11px] font-semibold muted">Observed firsthand</span>
         </div>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(320px,390px)_1fr]">
+        <div className="mt-6 grid gap-5 lg:grid-cols-[0.7fr_1.3fr]">
           <button
             type="button"
             onClick={() => setShowImage(true)}
-            className="group relative flex min-h-[520px] items-center justify-center overflow-hidden rounded-[1.5rem] border bg-[var(--surface-soft)] p-4 text-left shadow-sm transition hover:shadow-lg sm:min-h-[620px] sm:p-5"
-            aria-label="Open the POP verification screenshot at full size"
+            className="group flex min-h-[230px] flex-col items-center justify-center rounded-[1.5rem] border bg-[var(--surface-soft)] p-6 text-center transition hover:-translate-y-0.5 hover:shadow-lg sm:min-h-[270px]"
+            aria-label="View the actual POP verification screenshot"
           >
-            <div className="relative h-full max-h-[680px] w-full max-w-[350px] overflow-hidden rounded-[1.3rem] border border-[var(--border)] bg-black shadow-2xl">
-              <img
-                src="/pop-verification.svg"
-                alt="POP verification screen encountered during onboarding"
-                className="h-full w-full object-contain"
-              />
-              <span className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/75 px-3 py-2 text-[11px] font-semibold text-white opacity-90 backdrop-blur transition group-hover:bg-black/90">
-                <BsArrowsFullscreen />
-                View full size
-              </span>
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#11162a] text-white shadow-lg dark:bg-white dark:text-[#11162a]">
+              <BsArrowsFullscreen className="text-xl" />
             </div>
+            <p className="mt-5 text-base font-semibold">View the actual screenshot</p>
+            <p className="muted mt-1 max-w-xs text-xs leading-5">I kept the screenshot out of the main case study so the page stays focused. Click to open it.</p>
+            <span className="accent mt-4 text-xs font-semibold transition group-hover:underline">Open screenshot ↗</span>
           </button>
 
           <div className="grid gap-3">
@@ -107,7 +102,7 @@ export default function ProductNotes() {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm sm:p-8"
           role="dialog"
           aria-modal="true"
-          aria-label="POP verification screenshot"
+          aria-label="Actual POP verification screenshot"
           onClick={() => setShowImage(false)}
         >
           <button
@@ -120,7 +115,7 @@ export default function ProductNotes() {
           </button>
           <img
             src="/pop-verification.svg"
-            alt="POP verification screen encountered during onboarding"
+            alt="Actual POP verification screen encountered during onboarding"
             className="max-h-[92vh] max-w-full rounded-2xl object-contain shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           />
