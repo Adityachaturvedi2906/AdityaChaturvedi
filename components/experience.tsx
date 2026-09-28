@@ -10,7 +10,7 @@ export default function Experience() {
   return (
     <section id="experience" ref={ref} className="mx-auto mb-16 w-full max-w-6xl scroll-mt-24 sm:mb-24 lg:mb-28">
       <div className="mb-6 flex flex-col gap-2 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
-        <div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6a58d9]">03 · Career</p><h2 className="mt-2 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">Experience</h2></div>
+        <div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#6a58d9]">02 · Career</p><h2 className="mt-2 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">Experience</h2></div>
         <span className="hidden text-xs text-gray-400 sm:block">Technology → product → operations</span>
       </div>
       <div className="overflow-hidden rounded-[1.5rem] border border-black/[0.06] bg-white/70 shadow-[0_20px_70px_rgba(50,55,90,0.06)] sm:rounded-[2rem] dark:border-white/10 dark:bg-white/[0.04]">
