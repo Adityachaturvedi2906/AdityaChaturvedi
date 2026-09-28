@@ -21,7 +21,7 @@ export default function Arcade() {
           <div className="absolute right-[-5rem] top-[-7rem] h-64 w-64 rounded-full bg-[#6d5ce7]/20 blur-3xl" />
           <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
             <div className="min-w-0">
-              <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#a9a1ff]"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10">02</span> Featured product · Easebuzz</div>
+              <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[#a9a1ff]"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10">01</span> Featured product · Easebuzz</div>
               <div className="mt-4 flex items-center gap-3"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white text-[#11162a] shadow-lg sm:h-11 sm:w-11"><BsLightningCharge className="text-xl" /></span><h2 className="text-3xl font-semibold tracking-[-0.05em] sm:text-5xl">Arcade</h2></div>
               <p className="mt-4 max-w-2xl text-sm leading-6 text-white/65 sm:text-base sm:leading-7">A guided workspace that makes payment gateway integrations easier to understand and test — built from recurring merchant friction I saw firsthand.</p>
             </div>
