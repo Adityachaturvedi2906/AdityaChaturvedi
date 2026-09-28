@@ -3,13 +3,11 @@ import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import Arcade from "@/components/arcade";
-import ProductNotes from "@/components/product-notes";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
+    <main className="flex w-full flex-col items-center px-3 sm:px-5">
       <Intro />
-      <ProductNotes />
       <Arcade />
       <Experience />
       <About />
