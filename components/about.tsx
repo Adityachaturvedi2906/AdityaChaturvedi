@@ -16,7 +16,7 @@ export default function About() {
     <motion.section ref={ref} id="about" className="mx-auto mb-16 w-full max-w-6xl scroll-mt-24 sm:mb-24 lg:mb-28" initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
       <div className="grid gap-4 sm:gap-6 lg:grid-cols-[.85fr_1.15fr]">
         <div className="rounded-[1.5rem] bg-[#11162a] p-6 text-white shadow-[0_25px_70px_rgba(17,22,42,0.12)] sm:rounded-[2rem] sm:p-9 dark:bg-white dark:text-[#11162a]">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#b6afff] dark:text-[#6a58d9]">04 · About</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#b6afff] dark:text-[#6a58d9]">03 · About</p>
           <h2 className="mt-4 text-2xl font-semibold tracking-[-0.04em] sm:text-4xl">Technical enough to dig in. Product-minded enough to ask why.</h2>
           <p className="mt-4 text-sm leading-6 text-white/60 sm:mt-5 sm:leading-7 dark:text-[#5c6477]">My background is in software development, but my recent work has moved closer to the product itself. I spend time understanding merchant use cases, tracing payment and integration issues, working with data, and explaining technical decisions to non-technical stakeholders.</p>
         </div>
