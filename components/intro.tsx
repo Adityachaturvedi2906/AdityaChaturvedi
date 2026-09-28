@@ -48,7 +48,7 @@ export default function Intro() {
                 <a aria-label="LinkedIn" href="https://www.linkedin.com/in/aditya-chaturvedi2906/" target="_blank" rel="noreferrer" className="flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-black/[0.08] bg-white/75 px-3 py-3.5 text-sm font-medium text-[#25304a] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:flex-none sm:px-4 dark:border-white/10 dark:bg-white/[0.06] dark:text-white">
                   <BsLinkedin className="text-base" /> LinkedIn
                 </a>
-                <a aria-label="GitHub" href="https://github.com/Adityachaturvedri2906" target="_blank" rel="noreferrer" className="flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-black/[0.08] bg-white/75 px-3 py-3.5 text-sm font-medium text-[#25304a] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:flex-none sm:px-4 dark:border-white/10 dark:bg-white/[0.06] dark:text-white">
+                <a aria-label="GitHub" href="https://github.com/Adityachaturvedi2906" target="_blank" rel="noreferrer" className="flex min-w-0 flex-1 items-center justify-center gap-2 rounded-full border border-black/[0.08] bg-white/75 px-3 py-3.5 text-sm font-medium text-[#25304a] shadow-sm transition hover:-translate-y-0.5 hover:bg-white sm:flex-none sm:px-4 dark:border-white/10 dark:bg-white/[0.06] dark:text-white">
                   <FaGithubSquare className="text-base" /> GitHub
                 </a>
               </div>
@@ -98,7 +98,7 @@ export default function Intro() {
                   <button aria-label="Close resume" onClick={() => setResumeOpen(false)} className="rounded-full border border-black/10 p-2 text-[#11162a]"><BsX className="text-xl" /></button>
                 </div>
               </div>
-              <iframe title="Aditya Chaturvedri resume" src="/resume.pdf" className="min-h-0 w-full flex-1" />
+              <iframe title="Aditya Chaturvedi resume" src="/resume.pdf" className="min-h-0 w-full flex-1" />
             </motion.div>
           </motion.div>
         )}
