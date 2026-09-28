@@ -3,7 +3,6 @@ import { CgWorkAlt } from "react-icons/cg";
 
 export const links = [
   { name: "Home", hash: "#home" },
-  { name: "Product Teardown", hash: "#product-notes" },
   { name: "Arcade", hash: "#arcade" },
   { name: "Experience", hash: "#experience" },
   { name: "About", hash: "#about" },
