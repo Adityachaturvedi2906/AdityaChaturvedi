@@ -1,47 +1,33 @@
 "use server";
 
-import React from "react";
 import { Resend } from "resend";
 import { validateString, getErrorMessage } from "@/lib/utils";
-import ContactFormEmail from "@/email/contact-form-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
+  const name = formData.get("name");
   const senderEmail = formData.get("senderEmail");
+  const website = formData.get("website");
   const message = formData.get("message");
 
-  // simple server-side validation
-  if (!validateString(senderEmail, 500)) {
-    return {
-      error: "Invalid sender email",
-    };
-  }
-  if (!validateString(message, 5000)) {
-    return {
-      error: "Invalid message",
-    };
-  }
+  if (!validateString(name, 120)) return { error: "Please enter your name." };
+  if (!validateString(senderEmail, 500)) return { error: "Please enter a valid email." };
+  if (website && !validateString(website, 500)) return { error: "Website URL is too long." };
+  if (!validateString(message, 5000)) return { error: "Please describe what you need help with." };
 
-  let data;
+  const safeWebsite = typeof website === "string" && website.trim() ? website.trim() : "Not provided";
+
   try {
-    data = await resend.emails.send({
-      from: "Portfolio Contact Form <onboarding@resend.dev>",
+    const data = await resend.emails.send({
+      from: "Portfolio Services <onboarding@resend.dev>",
       to: "adityachaturvedi2906@gmail.com",
-      subject: "Message from Portfolio contact form",
       reply_to: senderEmail,
-      react: React.createElement(ContactFormEmail, {
-        message: message,
-        senderEmail: senderEmail,
-      }),
+      subject: `New freelance enquiry from ${name}`,
+      text: `New freelance enquiry\n\nName:\n${name}\n\nEmail:\n${senderEmail}\n\nWebsite:\n${safeWebsite}\n\nRequirement:\n${message}`,
     });
+    return { data };
   } catch (error: unknown) {
-    return {
-      error: getErrorMessage(error),
-    };
+    return { error: getErrorMessage(error) };
   }
-
-  return {
-    data,
-  };
 };
