@@ -7,10 +7,12 @@ import { BsList, BsX, BsArrowUpRight } from "react-icons/bs";
 import clsx from "clsx";
 import { links } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   const navigate = (name: (typeof links)[number]["name"]) => {
     setActiveSection(name);
@@ -18,43 +20,51 @@ export default function Header() {
     setMobileOpen(false);
   };
 
+  const getHref = (link: (typeof links)[number]) => {
+    if (link.name === "Services") return "/services";
+    if (pathname === "/") return link.hash;
+    if (link.name === "Home") return "/";
+    return `/${link.hash}`;
+  };
+
   return (
     <header className="relative z-[9999]">
       <nav className="fixed left-1/2 top-2 flex w-[calc(100%-1rem)] max-w-6xl -translate-x-1/2 items-center justify-between rounded-full border border-black/[0.07] bg-white/80 px-1.5 py-1.5 shadow-[0_10px_35px_rgba(35,38,55,0.08)] backdrop-blur-2xl dark:border-white/10 dark:bg-[#111218]/85 dark:shadow-black/30 sm:top-4 sm:w-[calc(100%-2rem)] sm:px-2 sm:py-2">
-        <Link href="#home" onClick={() => navigate("Home")} className="flex min-w-0 shrink-0 items-center gap-2 rounded-full px-2.5 py-1.5 sm:px-3">
+        <Link href="/" onClick={() => navigate("Home")} className="flex min-w-0 shrink-0 items-center gap-2 rounded-full px-2.5 py-1.5 sm:px-3">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#11162a] text-[10px] font-bold text-white dark:bg-white dark:text-[#11162a]">AC</span>
           <span className="hidden truncate text-sm font-semibold tracking-tight sm:inline">Aditya Chaturvedi</span>
         </Link>
 
         <ul className="hidden items-center gap-0.5 md:flex">
-          {links.map((link) => (
-            <li key={link.hash}>
-              <Link href={link.hash} onClick={() => navigate(link.name)} className={clsx("relative block whitespace-nowrap rounded-full px-3 py-2 text-[12px] font-medium transition lg:px-3.5", activeSection === link.name ? "text-[#101426] dark:text-[#101426]" : "text-gray-500 hover:text-[#101426] dark:text-white/65 dark:hover:text-white")}>
-                {activeSection === link.name && <motion.span layoutId="activeSection" className="absolute inset-0 -z-10 rounded-full bg-white shadow-sm ring-1 ring-black/[0.05] dark:bg-white" transition={{ type: "spring", stiffness: 380, damping: 30 }} />}
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          {links.map((link) => {
+            const isServices = link.name === "Services";
+            const isActive = isServices ? pathname === "/services" : pathname === "/" && activeSection === link.name;
+            return (
+              <li key={link.name}>
+                <Link href={getHref(link)} onClick={() => navigate(link.name)} className={clsx("relative block whitespace-nowrap rounded-full px-3 py-2 text-[12px] font-medium transition lg:px-3.5", isActive ? "text-[#101426] dark:text-[#101426]" : "text-gray-500 hover:text-[#101426] dark:text-white/65 dark:hover:text-white")}>
+                  {isActive && <motion.span layoutId="activeSection" className="absolute inset-0 -z-10 rounded-full bg-white shadow-sm ring-1 ring-black/[0.05] dark:bg-white" transition={{ type:"spring", stiffness:380, damping:30 }} />}
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
-        <Link href="#contact" onClick={() => navigate("Contact")} className="hidden items-center gap-1.5 rounded-full bg-[#11162a] px-4 py-2.5 text-xs font-semibold text-white transition hover:-translate-y-0.5 md:flex dark:bg-white dark:text-[#11162a]">
-          Let&apos;s connect <BsArrowUpRight />
+        <Link href="/services" onClick={() => navigate("Services")} className="hidden items-center gap-1.5 rounded-full bg-[#11162a] px-4 py-2.5 text-xs font-semibold text-white transition hover:-translate-y-0.5 md:flex dark:bg-white dark:text-[#11162a]">
+          Hire me <BsArrowUpRight />
         </Link>
+
         <button aria-label="Toggle navigation" aria-expanded={mobileOpen} onClick={() => setMobileOpen((open) => !open)} className="rounded-full p-2 text-2xl md:hidden dark:text-white">
           {mobileOpen ? <BsX /> : <BsList />}
         </button>
       </nav>
 
       {mobileOpen && (
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="fixed left-2 right-2 top-[4rem] z-[9998] max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-2xl border border-black/10 bg-white/95 p-2 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#111218]/95 sm:left-4 sm:right-4 sm:top-[4.75rem] md:hidden">
+        <motion.div initial={{ opacity:0, y:-10 }} animate={{ opacity:1, y:0 }} className="fixed left-2 right-2 top-[4rem] z-[9998] max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-2xl border border-black/10 bg-white/95 p-2 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#111218]/95 sm:left-4 sm:right-4 sm:top-[4.75rem] md:hidden">
           {links.map((link) => (
-            <Link key={link.hash} href={link.hash} onClick={() => navigate(link.name)} className="block rounded-xl px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-white/80 dark:hover:bg-white/10">
-              {link.name}
-            </Link>
+            <Link key={link.name} href={getHref(link)} onClick={() => navigate(link.name)} className="block rounded-xl px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-white/80 dark:hover:bg-white/10">{link.name}</Link>
           ))}
-          <Link href="#contact" onClick={() => navigate("Contact")} className="mt-1 block rounded-xl bg-[#11162a] px-4 py-3 text-center text-sm font-semibold text-white dark:bg-white dark:text-[#11162a]">
-            Let&apos;s connect
-          </Link>
+          <Link href="/services" onClick={() => navigate("Services")} className="mt-1 block rounded-xl bg-[#11162a] px-4 py-3 text-center text-sm font-semibold text-white dark:bg-white dark:text-[#11162a]">Hire me</Link>
         </motion.div>
       )}
     </header>
